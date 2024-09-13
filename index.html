@@ -1,1 +1,76 @@
-Hello World!
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUI Dogfood Production</title>
+
+    <script type="module" src="https://web.cardholder-ui-sdk.marqeta.com/releases/0.3/index.js"></script>
+    <script>
+      window.addEventListener("load", (event) => {
+        window.marqeta.bootstrap({
+          cuiAuthToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX3Rva2VuIjoiN2NkMDFkYTQtNWM5MC00YjFiLTgxNTMtMGNjNGI5NTg3MWQ4IiwicHJvZ3JhbV9zaG9ydF9jb2RlIjoic3RkbSIsIm9yaWdpbmFsX3Nlc3Npb25fc3RhcnQiOjE3MjQyNjc0MDAuOTgsImlhdCI6MTcyNDI2NzQwMCwiZXhwIjoxNzI0MjY3NzAwfQ.uw2MBUbo4_bnii0N_150c0_8DRh3wMDZwFISUChSp8I',
+          // themeName: 'optional-your-theme-name',
+        });
+
+        document.querySelector('mq-account')
+          .addEventListener('mqAccountLoadSuccess', async (e) => {
+            const msg = 'Yay!! Your mq-account data has loaded successfully!';
+            const customLog = document.getElementById('custom_log');
+            customLog.innerHTML = customLog.innerHTML + `<p>${msg}</p>`;
+          })
+      });
+    </script>
+
+    <style>
+      * {
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+      }
+      div {
+        width: 600px;
+        padding-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+      <h1>CUI Dogfood Production</h1>
+
+      <div id="custom_log"></div>
+
+      <div>
+        <mq-account></mq-account>
+      </div>
+
+      <div>
+        <mq-activate-card
+          show-title={true}
+          show-description={true}
+          card-token="59583a2f-3c9b-4dc3-a1e3-738015bfdd3d"
+        ></mq-activate-card>
+      </div>
+
+      <div>
+        <mq-reveal-pin
+          show-title={true}
+          card-token="59583a2f-3c9b-4dc3-a1e3-738015bfdd3d"
+          cardholder-verification-method="OTHER"
+          timeout={10}
+        ></mq-reveal-pin>
+      </div>
+
+      <div>
+        <mq-set-pin
+          show-title={true}
+          show-description={true}
+          card-token="59583a2f-3c9b-4dc3-a1e3-738015bfdd3d"
+        ></mq-set-pin>
+      </div>
+
+      <div>
+        <mq-view-card-details card-token="59583a2f-3c9b-4dc3-a1e3-738015bfdd3d"></mq-view-card-details>
+      </div>
+
+      <div>
+        <mq-transaction-activity></mq-transaction-activity>
+      </div>
+  </body>
+</html>
