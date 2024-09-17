@@ -17,6 +17,7 @@
         const applicationToken = getUrlParameter('applicationToken');
         const accessToken = getUrlParameter('accessToken');
         const userToken = getUrlParameter('userToken');
+        const cardToken = getUrlParameter('cardToken'); // Extract cardToken
 
         if (!applicationToken || !accessToken || !userToken) {
           console.error('Missing required URL parameters.');
@@ -63,6 +64,11 @@
             const customLog = document.getElementById('custom_log');
             customLog.innerHTML += `<p>${msg}</p>`;
           });
+
+        // Replace card-token attributes with the cardToken from URL
+        document.querySelectorAll('[card-token]').forEach(el => {
+          el.setAttribute('card-token', cardToken);
+        });
       });
     </script>
 
@@ -89,14 +95,14 @@
         <mq-activate-card
           show-title={true}
           show-description={true}
-          card-token="59583a2f-3c9b-4dc3-a1e3-738015bfdd3d"
+          card-token="{cardToken}"
         ></mq-activate-card>
       </div>
 
       <div>
         <mq-reveal-pin
           show-title={true}
-          card-token="59583a2f-3c9b-4dc3-a1e3-738015bfdd3d"
+          card-token="{cardToken}"
           cardholder-verification-method="OTHER"
           timeout={10}
         ></mq-reveal-pin>
@@ -106,12 +112,12 @@
         <mq-set-pin
           show-title={true}
           show-description={true}
-          card-token="59583a2f-3c9b-4dc3-a1e3-738015bfdd3d"
+          card-token="{cardToken}"
         ></mq-set-pin>
       </div>
 
       <div>
-        <mq-view-card-details card-token="c84e56e8-5823-432f-a62e-1d0f2c0ae568"></mq-view-card-details>
+        <mq-view-card-details card-token="{cardToken}"></mq-view-card-details>
       </div>
 
       <div>
