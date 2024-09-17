@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CUI Dogfood Production</title>
 
-    <script type="module" src="https://web.cardholder-ui-sdk.marqeta.com/releases/0.3/index.js"></script>
+    <script type="module" src="https://web.cardholder-ui-sdk.marqeta.com/releases/0.6/index.js"></script>
     <script>
       // Function to extract URL parameters
       function getUrlParameter(name) {
@@ -83,45 +83,68 @@
     </style>
   </head>
   <body>
-      <h1>CUI Dogfood Production</h1>
 
-      <div id="custom_log"></div>
+    <h1>CUI Dogfood Production</h1>
 
-      <div>
-        <mq-account></mq-account>
-      </div>
+    <div id="custom_log"></div>
 
-      <div>
-        <mq-activate-card
-          show-title={true}
-          show-description={true}
-          card-token="{cardToken}"
-        ></mq-activate-card>
-      </div>
+    <div>
+      <mq-account></mq-account>
+    </div>
 
-      <div>
-        <mq-reveal-pin
-          show-title={true}
-          card-token="{cardToken}"
-          cardholder-verification-method="OTHER"
-          timeout={10}
-        ></mq-reveal-pin>
-      </div>
+    <div>
+      <mq-activate-card
+        class="accepts-card-token"
+        show-title={true}
+        show-description={true}
+        card-token="{cardToken}"
+      ></mq-activate-card>
+    </div>
 
-      <div>
-        <mq-set-pin
-          show-title={true}
-          show-description={true}
-          card-token="{cardToken}"
-        ></mq-set-pin>
-      </div>
+    <div>
+      <mq-reveal-pin
+        class="accepts-card-token"
+        show-title={true}
+        card-token="{cardToken}"
+        cardholder-verification-method="OTHER"
+        timeout={10}
+      ></mq-reveal-pin>
+    </div>
 
-      <div>
-        <mq-view-card-details card-token="{cardToken}"></mq-view-card-details>
-      </div>
+    <div>
+      <mq-set-pin
+        class="accepts-card-token"
+        show-title={true}
+        show-description={true}
+        card-token="{cardToken}"
+      ></mq-set-pin>
+    </div>
 
-      <div>
-        <mq-transaction-activity></mq-transaction-activity>
-      </div>
+    <div>
+      <mq-view-card-details
+        class="accepts-card-token"
+        card-token="{cardToken}"
+      ></mq-view-card-details>
+    </div>
+
+    <div>
+      <mq-transaction-activity></mq-transaction-activity>
+    </div>
+    
+    <div>
+      <mq-manage-linked-accounts></mq-manage-linked-accounts>
+    </div>
+
+    <div>
+      <mq-add-linked-account></mq-add-linked-account>
+    </div>
+    
+    <div>
+      <mq-add-funds
+        class="accepts-card-token"
+      ></mq-add-funds>
+    </div>
+
+    
   </body>
 </html>
