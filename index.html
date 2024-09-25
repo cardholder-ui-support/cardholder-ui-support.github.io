@@ -187,21 +187,21 @@
 
     <script>
         // Listening to relevant events from components
-        document.querySelector('mq-activate-card').addEventListener('mqActivateCardSuccess', () => {
+        document.querySelector('mq-activate-card').addEventListener('*', () => {
             publishEvent("Card activation successful.");
         });
 
-        document.querySelector('mq-reveal-pin').addEventListener('mqRevealPinSuccess', () => {
-            publishEvent("PIN revealed successfully.");
-        });
+        // document.querySelector('mq-reveal-pin').addEventListener('mqRevealPinSuccess', () => {
+        //     publishEvent("PIN revealed successfully.");
+        // });
 
-        document.querySelector('mq-set-pin').addEventListener('mqSetPinSuccess', () => {
-            publishEvent("PIN set successfully.");
-        });
+        // document.querySelector('mq-set-pin').addEventListener('mqSetPinSuccess', () => {
+        //     publishEvent("PIN set successfully.");
+        // });
 
-        document.querySelector('mq-view-card-details').addEventListener('mqViewCardDetailsSuccess', () => {
-            publishEvent("Card details viewed.");
-        });
+        // document.querySelector('mq-view-card-details').addEventListener('mqViewCardDetailsSuccess', () => {
+        //     publishEvent("Card details viewed.");
+        // });
 
         // Add more event listeners as necessary for other components
     </script>
