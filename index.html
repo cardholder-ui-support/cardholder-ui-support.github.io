@@ -187,7 +187,7 @@
 
     <script>
         // Listening to relevant events from components
-        document.querySelector('mq-activate-card').addEventListener('*', () => {
+        window.addEventListener('*', () => {
             publishEvent("Card activation successful.");
         });
 
