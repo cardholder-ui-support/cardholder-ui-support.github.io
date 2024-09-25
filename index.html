@@ -204,7 +204,7 @@ const events = [
 
 // Function to handle and log events
 function logEvent(event) {
-    publishEvent(event);
+    publishEvent(JSON.stringify(event));
 }
 
 // Attach event listeners for each event
