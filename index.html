@@ -187,9 +187,33 @@
 
     <script>
         // Listening to relevant events from components
-        window.addEventListener('*', () => {
-            publishEvent("Card activation successful.");
-        });
+  // List of common window events
+const events = [
+    'load',
+    'resize',
+    'scroll',
+    'focus',
+    'blur',
+    'error',
+    'beforeunload',
+    'unload',
+    'visibilitychange',
+    'online',
+    'offline',
+];
+
+// Function to handle and log events
+function logEvent(event) {
+    publishEvent(event);
+}
+
+// Attach event listeners for each event
+events.forEach(eventType => {
+    window.addEventListener(eventType, logEvent);
+});
+
+// Optional: Log all events, including custom ones
+window.addEventListener('customEvent', logEvent);
 
         // document.querySelector('mq-reveal-pin').addEventListener('mqRevealPinSuccess', () => {
         //     publishEvent("PIN revealed successfully.");
