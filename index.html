@@ -18,6 +18,7 @@
         const accessToken = getUrlParameter('accessToken');
         const userToken = getUrlParameter('userToken');
         const cardToken = getUrlParameter('cardToken'); // Extract cardToken
+        const transactionToken = getUrlParameter('transactionToken'); // Extract transactionToken
 
         if (!applicationToken || !accessToken || !userToken) {
           console.error('Missing required URL parameters.');
@@ -62,12 +63,16 @@
           .addEventListener('mqAccountLoadSuccess', async () => {
             const msg = 'Yay!! Your mq-account data has loaded successfully!';
             const customLog = document.getElementById('custom_log');
-            customLog.innerHTML += `<p>${msg}</p>`;
+            customLog.innerHTML += `${msg}`;
           });
 
         // Replace card-token attributes with the cardToken from URL
         document.querySelectorAll('[card-token]').forEach(el => {
           el.setAttribute('card-token', cardToken);
+        });
+
+        document.querySelectorAll('[transaction-token]').forEach(el => {
+          el.setAttribute('transaction-token', transactionToken);
         });
       });
     </script>
@@ -150,5 +155,13 @@
       </div>
  
     
+<div>
+    <mq-dispute-intake-form 
+    transaction-token="{transactionToken}"
+    show-title={true}
+    show-success-and-failure-states={true}
+  />
+</div>
+
   </body>
 </html>
