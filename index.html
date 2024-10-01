@@ -78,12 +78,12 @@
                         'mqSetPinSubmitSuccess',
                         'mqSetPinSubmitError',
                         'mqSetPinDone',
-                        '',
-                        '',
-                        '',
-                        '',
-                        '',
-                        '',
+                        'mqRevealPinInit',
+                        'mqRevealPinRevealTriggered',
+                        'mqRevealPinRevealSuccess',
+                        'mqRevealPinRevealError',
+                        'mqRevealPinHide',
+                        'mqViewCardDetailsInit',
                         '',
                         '',
                         '',
@@ -171,7 +171,7 @@
                 show-title={true}
                 card-token="{cardToken}"
                 cardholder-verification-method="OTHER"
-                timeout={10}
+                timeout="10"
             ></mq-reveal-pin>
         </div>
         <div class="title">
