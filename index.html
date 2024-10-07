@@ -25,6 +25,10 @@
                 return;
             }
 
+            document.querySelectorAll('.accepts-card-token').forEach(
+          (elem) => elem.setAttribute('card-token', cardToken)
+        );
+
             // Base64 encode the credentials
             const credentials = `${applicationToken}:${accessToken}`;
             const base64Credentials = btoa(credentials);
@@ -102,10 +106,10 @@
 
             });
 
-                    // Replace card-token attributes with the cardToken from URL
-        document.querySelectorAll('[card-token]').forEach(el => {
-          el.setAttribute('card-token', cardToken);
-        });
+            
+
+
+        
         });
     </script>
 
