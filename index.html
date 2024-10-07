@@ -102,7 +102,10 @@
 
             });
 
-            
+                    // Replace card-token attributes with the cardToken from URL
+        document.querySelectorAll('[card-token]').forEach(el => {
+          el.setAttribute('card-token', cardToken);
+        });
         });
     </script>
 
