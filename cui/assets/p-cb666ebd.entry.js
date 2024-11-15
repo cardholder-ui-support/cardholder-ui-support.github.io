@@ -1,0 +1,7 @@
+/**
+ * Cardholder UI Web Components v0.22.0
+ * (c) 2024 Marqeta
+ * @license MIT
+ */
+import{r as t,e as o,i as e,j as r}from"./p-18a64bdb.js";import{c as a,a as i}from"./p-675e89df.js";import"./p-52af63d3.js";import{r as s}from"./p-bc4f08b6.js";import"./p-0462f723.js";const n="*{color:var(--typography-body-defaultBodyFontColor);font-family:var(--typography-body-defaultBodyFontFamily);font-size:var(--typography-body-defaultBodyFontSize);font-weight:var(--typography-body-defaultBodyFontWeight);letter-spacing:var(--typography-body-defaultBodyLetterSpacing);line-height:var(--typography-body-defaultBodyLineHeight)}strong{font-weight:var(--typography-body-strongFontWeight)}";const d=n;const y=class{constructor(o){t(this,o);this.renderTheme=async()=>{const t=a.get(i);const{theme:o,themeName:e}=t.execute();this.theme=o;this.themeName=e;if(this.theme){s(this.theme,document,this.el)}};this.theme=null;this.themeName=undefined}connectedCallback(){if(window.marqeta&&window.marqeta.isStorybookMockMode&&window.marqeta.assetPath){o(window.marqeta.assetPath)}this.renderTheme()}render(){return e("slot",{key:"e9c644f463e45457948380623ed5617f22480803"})}get el(){return r(this)}};y.style=d;export{y as theme_provider};
+//# sourceMappingURL=p-cb666ebd.entry.js.map

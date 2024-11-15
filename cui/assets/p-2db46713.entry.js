@@ -1,0 +1,7 @@
+/**
+ * Cardholder UI Web Components v0.22.0
+ * (c) 2024 Marqeta
+ * @license MIT
+ */
+import{r as o,i as e,H as s,j as i}from"./p-18a64bdb.js";import{r as n,o as c}from"./p-0a7eb0cd.js";import{g as r}from"./p-3970d3a9.js";const t=":host([slot]){display:none;line-height:0;z-index:100}.reorder-icon{display:block}::slotted(ion-icon){font-size:dynamic-font(16px)}.reorder-icon{font-size:2.125rem;opacity:0.4}";const a=t;const d=":host([slot]){display:none;line-height:0;z-index:100}.reorder-icon{display:block}::slotted(ion-icon){font-size:dynamic-font(16px)}.reorder-icon{font-size:1.9375rem;opacity:0.3}";const l=d;const p=class{constructor(e){o(this,e)}onClick(o){const e=this.el.closest("ion-reorder-group");o.preventDefault();if(!e||!e.disabled){o.stopImmediatePropagation()}}render(){const o=r(this);const i=o==="ios"?n:c;return e(s,{key:"663d74e231e3af56b6298ee2539fdac9c8465839",class:o},e("slot",{key:"c7c384ab8c9ca8abdc89cd984a39dfde70e342ca"},e("ion-icon",{key:"c8b6052db03d4b9e33a90e600c20861c73ee73ce",icon:i,lazy:false,class:"reorder-icon",part:"icon","aria-hidden":"true"})))}get el(){return i(this)}};p.style={ios:a,md:l};export{p as ion_reorder};
+//# sourceMappingURL=p-2db46713.entry.js.map

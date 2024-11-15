@@ -1,0 +1,7 @@
+/**
+ * Cardholder UI Web Components v0.22.0
+ * (c) 2024 Marqeta
+ * @license MIT
+ */
+import{r as n,i as a}from"./p-18a64bdb.js";const r=".mq-bone {\n  display: block;\n  position: relative;\n  background-color: var(--styles-background-surfaceSecondaryColor);\n  border-radius: var(--borderRadius-radius100);\n  overflow: hidden;\n\n  &::after {\n    position: absolute;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    transform: translateX(-100%);\n    background-image: linear-gradient(\n      to right,\n      var(--styles-background-surfaceSecondaryColor) 0,\n      var(--styles-background-surfaceTertiaryColor) 40%,\n      var(--styles-background-surfaceTertiaryColor) 60%,\n      var(--styles-background-surfaceSecondaryColor) 100%\n    );\n    animation: bones-animation 1800ms infinite;\n    animation-delay: var(--animation-animationDuration-duration400);\n    content: '';\n\n    @media (prefers-reduced-motion) {\n      animation: none;\n    }\n  }\n}\n\n@keyframes bones-animation {\n  75% {\n    transform: translateX(100%);\n  }\n  100% {\n    transform: translateX(100%);\n  }\n}\n";const o=r;const t=class{constructor(a){n(this,a);this.height="auto";this.width="auto";this.styleOverride={}}render(){const n={height:this.height,width:this.width};return a("div",{key:"5a06f07dab997582fcb8a1a9371fa541c81d7f36",class:"mq-bone","aria-busy":"true",style:Object.assign(Object.assign({},n),this.styleOverride)})}};t.style=o;export{t as mq_bone};
+//# sourceMappingURL=p-e79f7782.entry.js.map
