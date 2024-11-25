@@ -9,7 +9,8 @@
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" name="viewport">
     <title>
       Marqeta Cardholder UI SDK
-    </title><script data-m>window.addEventListener("DOMContentLoaded",(function(){document.body.innerHTML="added from html script tag";window.ReactNativeWebView.postMessage("running script from html file")}));window.marqeta=window.marqeta||{};window.addEventListener("message",(function(o){const{message:e,theme:n,componentProps:t,globalProps:i}=o?.data||{};window.ReactNativeWebView.postMessage(JSON.stringify({message:e,theme:n,componentProps:t,globalProps:i}));if(e==="setTheme"&&n){window.marqeta.theme=n}else if(e==="setProps"&&(i||t)){window.marqeta.globalProps=i;window.marqeta.componentProps=t;if(!document.querySelector("iframe-page-root")){document.body.appendChild(document.createElement("iframe-page-root"))}window.ReactNativeWebView.postMessage(JSON.stringify({innerBody:document.body.innerHTML}))}}));</script><script data-m>window.marqeta.isServedFromUxtService=function(){const s=window.location.host;let c=false;["localhost","ux-toolkit-api","cui-service"].forEach((t=>{if(s.includes(t)){c=true}}));return c};const baseUri=window.marqeta.isServedFromUxtService()?"/static":"../cui";const esmScript=document.createElement("script");esmScript.type="module";esmScript.setAttribute("src",`${baseUri}/assets/sdk-web-components.esm.js`);const cjsScript=document.createElement("script");cjsScript.noModule=true;cjsScript.setAttribute("src",`${baseUri}/assets/sdk-web-components.js`);document.head.appendChild(esmScript);document.head.appendChild(cjsScript);</script>
+    </title>
+    <script>alert('whats up');</script>
     <link href="http://localhost:8080/iframe-page-root" rel="canonical">
   </head>
   <body style="font-family: system-ui; margin: 0px;"></body>
