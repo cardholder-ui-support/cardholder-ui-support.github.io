@@ -12,21 +12,20 @@
     </title>
     <script>
     
-    const policy = "default-src 'self'; script-src 'self'; style-src 'self';";
-document.querySelector('meta[http-equiv="Content-Security-Policy"]').setAttribute('content', policy);
 
 
-    setInterval(() => {
-        alert("whats up");
-    }, 20000);
-    
-    document.addEventListener('DOMContentLoaded', () => {
-    alert('whats up - DOMContentLoaded');
-  });
-
-  window.addEventListener('load', () => {
-    alert('whats up - load');
-  });
+'use strict';
+var dclhandler = false;
+if (document.readyState !== 'loading') {
+    start();
+} else {
+    dclhandler = true;
+    document.addEventListener('DOMContentLoaded', start);
+}
+function start() {
+    if (dclhandler) { document.removeEventListener('DOMContentLoaded', start); }
+    alert('Start the site`s JS activities');
+}
 
 
 
