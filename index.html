@@ -67,31 +67,11 @@
 
                     // List of events you want to capture
                     const events = [
-                        'mqAccountLoadSuccess',
-                        'mqAccountLoadError',
-                        'mqAccountRequestFailure',
-                        'mqAccountInvalidState',
-                        'mqAccountAddMoneyTriggered',
-                        'mqAccountLinkCardAddMoneyTriggered',
-                        'mqActivateCardInit',
-                        'mqActivateCardSubmitSuccess',
-                        'mqActivateCardSubmitError',
-                        'mqActivateCardDone',
-                        'mqSetPinInit',
-                        'mqSetPinSubmitTriggered',
-                        'mqSetPinSubmitSuccess',
-                        'mqSetPinSubmitError',
-                        'mqSetPinDone',
-                        'mqRevealPinInit',
-                        'mqRevealPinRevealTriggered',
-                        'mqRevealPinRevealSuccess',
-                        'mqRevealPinRevealError',
-                        'mqRevealPinHide',
-                        'mqViewCardDetailsInit',
-                        '',
-                        '',
-                        '',
-                        '',
+                        'mqAccountLoadInitiated',
+                        'mqAccountLoadCompleted',
+                        'mqAccountActionTriggered',
+                        'mqAccountActionCompleted',
+                        'mqAccountActionHook'
                     ];
 
                     events.forEach(event => {
@@ -157,123 +137,7 @@
             <div id="mq-account-events" class="event-list"></div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="component">
-            <mq-activate-card
-                class="accepts-card-token"
-                show-title={true}
-                show-description={true}
-                card-token="{cardToken}"
-            ></mq-activate-card>
-        </div>
-        <div class="title">
-            Activate Card
-            <div id="mq-activate-card-events" class="event-list"></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="component">
-            <mq-reveal-pin
-                class="accepts-card-token"
-                show-title={true}
-                card-token="{cardToken}"
-                cardholder-verification-method="OTHER"
-                timeout="10"
-            ></mq-reveal-pin>
-        </div>
-        <div class="title">
-            Reveal PIN
-            <div id="mq-reveal-pin-events" class="event-list"></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="component">
-            <mq-set-pin
-                class="accepts-card-token"
-                show-title={true}
-                show-description={true}
-                card-token="{cardToken}"
-            ></mq-set-pin>
-        </div>
-        <div class="title">
-            Set PIN
-            <div id="mq-set-pin-events" class="event-list"></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="component">
-            <mq-card
-                class="accepts-card-token"
-                card-token="{cardToken}"
-            ></mq-card>
-        </div>
-        <div class="title">
-            View Card Details
-            <div id="mq-view-card-details-events" class="event-list"></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="component"><mq-transaction-activity></mq-transaction-activity></div>
-        <div class="title">
-            Transaction Activity
-            <div id="mq-transaction-activity-events" class="event-list"></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="component"><mq-manage-linked-accounts></mq-manage-linked-accounts></div>
-        <div class="title">
-            Manage Linked Accounts
-            <div id="mq-manage-linked-accounts-events" class="event-list"></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="component"><mq-add-linked-account></mq-add-linked-account></div>
-        <div class="title">
-            Add Linked Account
-            <div id="mq-add-linked-account-events" class="event-list"></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="component">
-            <mq-add-funds class="accepts-card-token" card-token="{cardToken}"></mq-add-funds>
-        </div>
-        <div class="title">
-            Add Funds
-            <div id="mq-add-funds-events" class="event-list"></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="component">
-            <mq-kyc raw-disclosures='[{"title":"Example agreement","src":"https://example.com"}]'></mq-kyc>
-        </div>
-        <div class="title">
-            KYC
-            <div id="mq-kyc-events" class="event-list"></div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="component">
-            <mq-dispute-intake-form 
-                transaction-token="{transactionToken}"
-                show-title={true}
-                show-success-and-failure-states={true}
-            ></mq-dispute-intake-form>
-        </div>
-        <div class="title">
-            Dispute Intake Form
-            <div id="mq-dispute-intake-form-events" class="event-list"></div>
-        </div>
-    </div>
+    
 </div> 
 
 </body>
