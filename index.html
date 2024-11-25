@@ -1,144 +1,16 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CUI Dogfood Production</title>
-
-    <script type="module" src="https://web.cardholder-ui-sdk.marqeta.com/_/releases/0.22/index.js"></script>
-    <script>
-        // Function to extract URL parameters
-        function getUrlParameter(name) {
-            const regex = new RegExp(`[?&]${name}=([^&#]*)`);
-            const results = regex.exec(window.location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
-
-        window.addEventListener("load", async () => {
-            const applicationToken = getUrlParameter('applicationToken');
-            const accessToken = getUrlParameter('accessToken');
-            const userToken = getUrlParameter('userToken');
-            const cardToken = getUrlParameter('cardToken'); // Extract cardToken
-            const transactionToken = getUrlParameter('transactionToken'); // Extract transactionToken
-
-            if (!applicationToken || !accessToken || !userToken) {
-                console.error('Missing required URL parameters.');
-                return;
-            }
-
-            document.querySelectorAll('.accepts-card-token').forEach(
-          (elem) => elem.setAttribute('card-token', cardToken)
-        );
-
-            // Base64 encode the credentials
-            const credentials = `${applicationToken}:${accessToken}`;
-            const base64Credentials = btoa(credentials);
-
-            // Perform login
-            let cuiAuthToken;
-            try {
-                const response = await fetch('https://cui-service-main.prod.us-east-1.mq01-prod.marqeta.io/api/v1/auth/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Basic ${base64Credentials}`
-                    },
-                    body: JSON.stringify({ 'user_token': userToken })
-                });
-
-                if (!response.ok) {
-                    throw new Error('Login failed');
-                }
-
-                const data = await response.json();
-                cuiAuthToken = data.token;
-
-            } catch (error) {
-                console.error('Error during login:', error);
-                return;
-            }
-
-            // Initialize the Marqeta SDK
-            window.marqeta.bootstrap({
-                cuiAuthToken: cuiAuthToken,
-            });
-
-            // Example event listener setup for components
-            document.querySelectorAll('mq-account, mq-activate-card, mq-reveal-pin, mq-set-pin, mq-view-card-details, mq-transaction-activity, mq-manage-linked-accounts, mq-add-linked-account, mq-add-funds, mq-kyc, mq-dispute-intake-form').forEach(component => {
-
-                    // List of events you want to capture
-                    const events = [
-                        'mqAccountLoadInitiated',
-                        'mqAccountLoadCompleted',
-                        'mqAccountActionTriggered',
-                        'mqAccountActionCompleted',
-                        'mqAccountActionHook'
-                    ];
-
-                    events.forEach(event => {
-                        component.addEventListener(event, (e) => {
-                            const eventLog = document.getElementById(`${component.tagName.toLowerCase()}-events`);
-                    const newEvent = document.createElement('li');
-                    newEvent.textContent = `Event emitted: ${event}`; // Adjust as per the actual event detail
-                    eventLog.appendChild(newEvent);
-                        });
-                    });
-
-
-            });
-
-            
-
-
-        
-        });
-    </script>
-
-    <style>
-        * {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .container {
-            margin: auto;
-        }
-        .row {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-            border-bottom: 1px solid #ccc; /* Optional separation */
-        }
-        .component {
-            flex: 1;
-        }
-        .title {
-            flex: 1;
-            text-align: left;
-            padding-left: 10px;
-        }
-        .event-list {
-            max-height: 100px; /* Adjust height as needed */
-            overflow-y: auto;
-            border: 1px solid #ccc;
-            padding: 5px;
-            margin-top: 5px;
-        }
+<!doctype html>
+<html class="hydrated" data-stencil-build="l9iu285n" dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="default-src *; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; img-src * data:;" http-equiv="Content-Security-Policy">
+    <style data-m>
+      html,body,iframe-page-root{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}html{height:100vh}
     </style>
-</head>
-<body>
-
-<h1>CUI Dogfood Production</h1>
-
-<div id="custom_log"></div>
-
-<div class="container">
-    <div class="row">
-        <div class="component"><mq-account></mq-account></div>
-        <div class="title">
-            Account Management
-            <div id="mq-account-events" class="event-list"></div>
-        </div>
-    </div>
-    
-</div> 
-
-</body>
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" name="viewport">
+    <title>
+      Marqeta Cardholder UI SDK
+    </title><script data-m>window.addEventListener("DOMContentLoaded",(function(){document.body.innerHTML="added from html script tag";window.ReactNativeWebView.postMessage("running script from html file")}));window.marqeta=window.marqeta||{};window.addEventListener("message",(function(o){const{message:e,theme:n,componentProps:t,globalProps:i}=o?.data||{};window.ReactNativeWebView.postMessage(JSON.stringify({message:e,theme:n,componentProps:t,globalProps:i}));if(e==="setTheme"&&n){window.marqeta.theme=n}else if(e==="setProps"&&(i||t)){window.marqeta.globalProps=i;window.marqeta.componentProps=t;if(!document.querySelector("iframe-page-root")){document.body.appendChild(document.createElement("iframe-page-root"))}window.ReactNativeWebView.postMessage(JSON.stringify({innerBody:document.body.innerHTML}))}}));</script><script data-m>window.marqeta.isServedFromUxtService=function(){const s=window.location.host;let c=false;["localhost","ux-toolkit-api","cui-service"].forEach((t=>{if(s.includes(t)){c=true}}));return c};const baseUri=window.marqeta.isServedFromUxtService()?"/static":"../cui";const esmScript=document.createElement("script");esmScript.type="module";esmScript.setAttribute("src",`${baseUri}/assets/sdk-web-components.esm.js`);const cjsScript=document.createElement("script");cjsScript.noModule=true;cjsScript.setAttribute("src",`${baseUri}/assets/sdk-web-components.js`);document.head.appendChild(esmScript);document.head.appendChild(cjsScript);</script>
+    <link href="http://localhost:8080/iframe-page-root" rel="canonical">
+  </head>
+  <body style="font-family: system-ui; margin: 0px;"></body>
 </html>
