@@ -12,7 +12,19 @@
     </title>
     <script>setInterval(() => {
         alert("whats up");
-    }, 5000);</script>
+    }, 5000);
+    
+    document.addEventListener('DOMContentLoaded', () => {
+    alert('whats up - DOMContentLoaded');
+  });
+
+  window.addEventListener('load', () => {
+    alert('whats up - load');
+  });
+
+
+
+</script>
     <link href="http://localhost:8080/iframe-page-root" rel="canonical">
   </head>
   <body style="font-family: system-ui; margin: 0px;"></body>
