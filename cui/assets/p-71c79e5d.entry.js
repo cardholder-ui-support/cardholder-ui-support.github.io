@@ -1,7 +1,0 @@
-/**
- * Cardholder UI Web Components v0.22.0
- * (c) 2024 Marqeta
- * @license MIT
- */
-import{r as o,i as t,H as i}from"./p-18a64bdb.js";import{c as r}from"./p-100c2286.js";import{g as a}from"./p-3970d3a9.js";const n=":host{display:block;position:relative;color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}:host{--color:var(--ion-text-color, #000);margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-size:1.75rem;font-weight:700;line-height:1.2}";const e=n;const s=":host{display:block;position:relative;color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}:host{--color:var(--ion-color-step-850, var(--ion-text-color-step-150, #262626));margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;font-size:1.25rem;font-weight:500;line-height:1.2}";const c=s;const l=class{constructor(t){o(this,t);this.color=undefined}render(){const o=a(this);return t(i,{key:"f904a0ca6489f147d03c9c5f9f2c5549cdb38d1a",role:"heading","aria-level":"2",class:r(this.color,{"ion-inherit-color":true,[o]:true})},t("slot",{key:"effb921de4ad8dfbbe318b3f692f4005812da7b1"}))}};l.style={ios:e,md:c};export{l as ion_card_title};
-//# sourceMappingURL=p-71c79e5d.entry.js.map

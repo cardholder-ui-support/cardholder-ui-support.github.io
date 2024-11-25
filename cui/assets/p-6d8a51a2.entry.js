@@ -1,7 +1,0 @@
-/**
- * Cardholder UI Web Components v0.22.0
- * (c) 2024 Marqeta
- * @license MIT
- */
-import{r as t,i as e,H as i,j as s}from"./p-18a64bdb.js";import{a}from"./p-65f27ffd.js";import"./p-a29d67e4.js";const n=":host(.tab-hidden){display:none !important}";const r=n;const d=class{constructor(e){t(this,e);this.loaded=false;this.active=false;this.delegate=undefined;this.tab=undefined;this.component=undefined}async componentWillLoad(){if(this.active){await this.setActive()}}async setActive(){await this.prepareLazyLoaded();this.active=true}changeActive(t){if(t){this.prepareLazyLoaded()}}prepareLazyLoaded(){if(!this.loaded&&this.component!=null){this.loaded=true;try{return a(this.delegate,this.el,this.component,["ion-page"])}catch(t){console.error(t)}}return Promise.resolve(undefined)}render(){const{tab:t,active:s,component:a}=this;return e(i,{key:"46d5498418f5379861c3d7465e8021dec45f1200",role:"tabpanel","aria-hidden":!s?"true":null,"aria-labelledby":`tab-button-${t}`,class:{"ion-page":a===undefined,"tab-hidden":!s}},e("slot",{key:"b45045dccb87dfe75e3f5a5a474bb48b6c98e922"}))}get el(){return s(this)}static get watchers(){return{active:["changeActive"]}}};d.style=r;export{d as ion_tab};
-//# sourceMappingURL=p-6d8a51a2.entry.js.map

@@ -1,7 +1,0 @@
-/**
- * Cardholder UI Web Components v0.22.0
- * (c) 2024 Marqeta
- * @license MIT
- */
-const s=(s,e)=>{if(s.target.value.length<2){if(s.key>1&&s.key<=9&&s.target.value!=="1"){s.preventDefault();s.target.value=`0${s.key}/`}else if(s.target.value==="0"&&s.key==="1"){s.preventDefault();s.target.value=`0${s.key}/`}else if(s.target.value==="1"&&s.key==="/"){s.preventDefault();s.target.value=`01/`}else if(s.target.value==="1"&&s.key>=0){s.preventDefault();s.target.value=`1${s.key}/`}}else if(s.target.value.length>2&&s.target.value.length<5){const e=/\/\d{2}$/g;if(e.test(s.target.value)&&s.target.value.length===3){if(s.key>1&&s.key<=9){s.preventDefault();s.target.value=`0${s.key}${s.target.value}`}}}if(s.key==="Backspace"){const n=s.target.value[s.target.selectionStart-1];if(n==="/"&&e.value.length>4){s.preventDefault();e.selectionStart=e.selectionEnd=e.value.length;e.focus()}else if(n==="/"&&e.value.length<4){e.focus();e.value=e.value.slice(0,2)}}};const e=(s,e)=>{const n=new Date;const t=n.getFullYear().toString();const c=n.getMonth()+1;const o=t>e;const f=t===e&&c>=s;return!(o||f)};const n=s=>{const e=new RegExp("^[0-9]{3}$");const n=e.test(s);return n};const t=s=>{const e=new RegExp("^(0[1-9]|1[0-2])/?([0-9]{2})$");const n=e.test(s);return n};export{t as a,e as b,s as f,n as v};
-//# sourceMappingURL=p-4e66535e.js.map

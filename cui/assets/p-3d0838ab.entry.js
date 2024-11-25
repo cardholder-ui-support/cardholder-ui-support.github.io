@@ -1,7 +1,0 @@
-/**
- * Cardholder UI Web Components v0.22.0
- * (c) 2024 Marqeta
- * @license MIT
- */
-import{r as t,k as e,i,H as s,j as o}from"./p-18a64bdb.js";const n=":host{display:flex;flex-direction:column;gap:var(--spacing-spacing400);text-align:center;color:var(--styles-text-textPrimaryColor);font-size:var(--typography-sectionTitle-sectionTitleFontSize);font-weight:var(--typography-sectionTitle-sectionTitleFontWeight);line-height:var(--typography-sectionTitle-sectionTitleLineHeight);letter-spacing:var(--typography-sectionTitle-sectionTitleLetterSpacing)}.set-pin-success-text{color:var(--styles-text-textSecondaryColor);font-size:var(--typography-largeBody-largeBodyFontSize);font-weight:var(--typography-largeBody-largeBodyFontWeight);line-height:var(--typography-largeBody-largeBodyLineHeight)}";const r=n;const a=class{constructor(i){t(this,i);this.closeSetPinSuccess=e(this,"closeSetPinSuccess",7);this.handleCloseClick=()=>{this.closeSetPinSuccess.emit({type:"closeSetPinSuccess"})};this.theme=null;this.lastFour=undefined}render(){return i(s,{key:"9588dbf2b46b6389d9247cc170922e8d3a71cbe6"},i("mq-end-card",{key:"522ac977132b0232a8e7905ce2178fb901f9d029",icon:"checkmark-final",showAnimation:true,titleText:"Your PIN has been set",subtitleText:`Card ••${this.lastFour} is ready to use.`,buttonLabel:"Done",onMqEndCardButtonClicked:this.handleCloseClick}))}get el(){return o(this)}};a.style=r;export{a as mq_set_pin_success};
-//# sourceMappingURL=p-3d0838ab.entry.js.map

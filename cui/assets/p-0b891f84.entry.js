@@ -1,7 +1,0 @@
-/**
- * Cardholder UI Web Components v0.22.0
- * (c) 2024 Marqeta
- * @license MIT
- */
-import{r as e,i as r,H as a}from"./p-18a64bdb.js";const o=".panel{border-radius:var(--borderRadius-radius200);border:var(--styles-border-borderWidth) solid var(--styles-border-borderDefaultColor);background:var(--styles-background-surfacePrimaryColor)}.panel [slot='panel-header'],.panel [slot='panel-content'],.panel [slot='panel-footer']{padding:var(--spacing-spacing400)}.panel [slot='panel-header']{border-bottom:var(--styles-border-borderWidth) solid var(--styles-border-borderDefaultColor)}.panel [slot='panel-footer']{border-top:var(--styles-border-borderWidth) solid var(--styles-border-borderDefaultColor)}";const d=o;const s=class{constructor(r){e(this,r)}render(){return r(a,{key:"1d3a50b05d264df1aa5f61c08cbd65bd8b0a0cb8"},r("div",{key:"94c3eaf5d415a694c6402a026ed5f59659b747a4",class:"panel"},r("slot",{key:"e19baf610305e457c8d1c469f7e9071b92c2d3ef",name:"panel-header"}),r("slot",{key:"28d8e9fe55cdf4852901ab9523fdd61a23ef2424",name:"panel-content"}),r("slot",{key:"6f2825ae9a4cae37e752722658646be576ac6b32",name:"panel-footer"})))}};s.style=d;export{s as mq_panel};
-//# sourceMappingURL=p-0b891f84.entry.js.map
